@@ -4,6 +4,10 @@
 
 [DV Dasari: Use Ansible for AWS Provisioning and Configuration Management](http://dasari.me/2016/08/26/ansible-for-aws-provisioning-configuration-management.html)
 
+## Requirements
+
+[Vagrant](https://www.vagrantup.com/)
+
 ## Layout
 
 The `playbook.yml` and `files`, `group_vars/` & `templates/` directories in the root control the configuration of the Vagrant machine.  The environment contained in the `ansible/` directory is the instance used by the Vagrant machine.
