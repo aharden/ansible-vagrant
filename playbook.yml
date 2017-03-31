@@ -1,0 +1,43 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Upgrade all packages
+      yum: name=* state=latest
+
+    - name: Install EPEL repository
+      yum: name=https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm state=present
+
+    - name: Install Ansible
+      yum: name=ansible
+
+    - name: Install python-pip
+      yum: name=python-pip
+
+    - name: pip install boto
+      pip: name=boto
+
+    - name: Setup boto config file
+      template: src=boto.j2
+                dest=/home/vagrant/.boto
+                owner=vagrant
+                group=vagrant
+
+    - name: Setup SSH config file
+      copy: src=sshconfig.txt
+            dest=/home/vagrant/.ssh/config
+            owner=vagrant
+            group=vagrant
+
+    - name: Setup AWS private key file
+      copy: src=awsprivatekey.txt
+            dest=/home/vagrant/.ssh/id_rsa
+            owner=vagrant
+            group=vagrant
+            mode=0400
+
+    - name: Install ntpdate
+      yum: name=ntpdate
+
+    - name: Synchronize clock
+      command: ntpdate time.nist.gov
