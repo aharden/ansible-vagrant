@@ -17,6 +17,9 @@
     - name: pip install boto
       pip: name=boto
 
+    - name: pip install boto3
+      pip: name=boto3
+
     - name: Setup boto config file
       template: src=boto.j2
                 dest=/home/vagrant/.boto
