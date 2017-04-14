@@ -10,7 +10,7 @@
 
 ## Layout
 
-The `playbook.yml` and `files`, `group_vars/` & `templates/` directories in the root control the configuration of the Vagrant machine.  The environment contained in the `ansible/` directory is the instance used by the Vagrant machine.
+The `playbook.yml` and `files`, `group_vars/` & `templates/` directories in the root control the configuration of the Vagrant machine.  The file system in the `ansible/` directory is used by the Vagrant-Powered Ansible management system.
 
 ## Prepare
 
@@ -22,7 +22,7 @@ The `playbook.yml` and `files`, `group_vars/` & `templates/` directories in the 
 
 `vagrant up` and `vagrant ssh` into your virtual Ansible development environment.
 
-After VM has been created, you can run `vagrant provision` to adjust the running configuration when required.  It's recommended to run `vagrant provision` every time the VM is resumed after creation.  (See below.)
+After the Ansible management VM has been created, you can run `vagrant provision` to adjust the running configuration when required.  It's recommended to run `vagrant provision` every time the VM is resumed after creation.  (See below.)
 
 ## Adjust
 
