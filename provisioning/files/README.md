@@ -1,4 +1,4 @@
-# Files for Vagrant build
+# Files for Vagrant provisioning
 
 Put a file named `awsprivatekey.txt` in this directory, containing your AWS key pair's private key in this format:
 

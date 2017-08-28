@@ -8,15 +8,15 @@
 
 [Vagrant](https://www.vagrantup.com/)
 
-## Layout
+### Layout
 
-The `playbook.yml` and `files`, `group_vars/` & `templates/` directories in the root control the configuration of the Vagrant machine.  The file system in the `ansible/` directory is used by the Vagrant-Powered Ansible management system.
+The `playbook.yml` and `files/`, `group_vars/` & `templates/` directories in the `/provisioning/` directory control the configuration of the Vagrant machine.  The file system in the `/ansible/` directory is used by the Vagrant-Powered Ansible management system.
 
-## Prepare
+### Prepare
 
-`group_vars/all` should be created on your instance with your own AWS credentials supplied for the corresponding variables.
+`/provisioning/group_vars/all` should be created on your instance with your own AWS credentials supplied for the corresponding variables.
 
-`files/awsprivatekey.txt` should be edited on your instance with your own AWS EC2 key pair's private key (required for EC2 instance deployment)
+`/provisioning/files/awsprivatekey.txt` should be edited on your instance with your own AWS EC2 key pair's private key (required for EC2 instance deployment)
 
 ## Activate
 

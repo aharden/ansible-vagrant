@@ -2,9 +2,9 @@
 ####################
 .vagrant/
 **/*.retry
-group_vars/all
 ansible/vault_pass.txt
-files/awsprivatekey.txt
+provisioning/files/awsprivatekey.txt
+provisioning/group_vars/all
 
 # Compiled source #
 ###################
