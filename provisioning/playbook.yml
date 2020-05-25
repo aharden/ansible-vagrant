@@ -5,24 +5,48 @@
     - name: Upgrade all packages
       yum: name=* state=latest
 
-    - name: Install EPEL repository
-      yum: name=https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm state=present
+    - name: Install git
+      yum: name=git
 
-    - name: Install Ansible
-      yum: name=ansible
+    - name: Install python-devel
+      yum: name=python3-devel
 
-    - name: Install python-pip
-      yum: name=python-pip
+    - name: pip upgrade pip
+      pip:
+        name:
+          - pip>20.1.0,<20.2.0
+        executable: pip3
 
-    - name: pip install boto
-      pip: name=boto
-
-    - name: pip install boto3
-      pip: name=boto3
+    - name: pip install components
+      pip:
+        name:
+          - boto
+          - boto3
+          - ansible>2.8.0,<2.9.0
+          - awscli>1.8.0,<1.9.0
+        executable: pip3
 
     - name: Setup boto config file
       template: src=boto.j2
                 dest=/home/vagrant/.boto
+                owner=vagrant
+                group=vagrant
+
+    - name: Setup awscli directory
+      file: path=/home/vagrant/.aws
+            state=directory
+            owner=vagrant
+            group=vagrant
+
+    - name: Setup awscli credentials file
+      template: src=credentials.j2
+                dest=/home/vagrant/.aws/credentials
+                owner=vagrant
+                group=vagrant
+
+    - name: Setup awscli config file
+      template: src=config.j2
+                dest=/home/vagrant/.aws/config
                 owner=vagrant
                 group=vagrant
 
@@ -37,6 +61,20 @@
             dest=/home/vagrant/.ssh/id_rsa
             owner=vagrant
             group=vagrant
+            mode=0400
+
+    - name: Setup root ssh config directory
+      file: path=/root/.ssh
+            state=directory
+            owner=root
+            group=root
+            mode=0755
+
+    - name: Setup root Github private key file
+      copy: src=awsprivatekey.txt
+            dest=/root/.ssh/id_rsa
+            owner=root
+            group=root
             mode=0400
 
     - name: Install ntpdate
