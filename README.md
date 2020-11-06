@@ -24,17 +24,6 @@ The `playbook.yml` and `files/`, `group_vars/` & `templates/` directories in the
 
 After the Ansible management VM has been created, you can run `vagrant provision` to adjust the running configuration when required.  It's recommended to run `vagrant provision` every time the VM is resumed after creation.  (See below.)
 
-## Adjust
-
-If your Vagrant machine is suspended, its time can become out of sync, and AWS
-modules may fail to connect after it is resumed.  Run:
-
-`sudo ntpdate time.nist.gov`
-
-to synchronize the Vagrant machine's clock after it resumes.
-
-This command is included in a `vagrant provision` run.
-
 ## Acknowledgement
 
 Thanks to [DV Dasari](https://github.com/dv2) for inspiring this toolset.

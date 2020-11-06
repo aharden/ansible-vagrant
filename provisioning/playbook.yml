@@ -5,26 +5,17 @@
     - name: Upgrade all packages
       yum: name=* state=latest
 
-    - name: Install git
-      yum: name=git
-
-    - name: Install python-devel
-      yum: name=python3-devel
-
     - name: pip upgrade pip
       pip:
         name:
-          - pip>20.1.0,<20.2.0
-        executable: pip3
+          - pip>20.2.0,<20.3.0
 
     - name: pip install components
       pip:
         name:
           - boto
           - boto3
-          - ansible>2.8.0,<2.9.0
-          - awscli>1.8.0,<1.9.0
-        executable: pip3
+          - awscli
 
     - name: Setup boto config file
       template: src=boto.j2
@@ -76,9 +67,3 @@
             owner=root
             group=root
             mode=0400
-
-    - name: Install ntpdate
-      yum: name=ntpdate
-
-    - name: Synchronize clock
-      command: ntpdate time.nist.gov
