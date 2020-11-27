@@ -18,6 +18,11 @@ The `playbook.yml` and `files/`, `group_vars/` & `templates/` directories in the
 
 `/provisioning/files/awsprivatekey.txt` should be edited on your instance with your own AWS EC2 key pair's private key (required for EC2 instance deployment)
 
+`config.yaml` should be edited to select the desired Ansible version in the `configs::use` value.  Current versions supported:
+* `two_eight`: Ansible 2.8.x on CentOS 8/Python 3.6 *(default)*
+* `two_nine`: Ansible 2.9.x on CentOS 8/Python 3.6
+* `two_ten`: Ansible 2.10.x on CentOS 8/Python 3.6
+
 ## Activate
 
 `vagrant up` and `vagrant ssh` into your virtual Ansible development environment.
@@ -27,3 +32,5 @@ After the Ansible management VM has been created, you can run `vagrant provision
 ## Acknowledgement
 
 Thanks to [DV Dasari](https://github.com/dv2) for inspiring this toolset.
+
+The method for configuring support for multiple Ansible versions was inspired by [this StackOverflow response](https://stackoverflow.com/a/26394449).
