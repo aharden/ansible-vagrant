@@ -2,11 +2,11 @@
 configs:
     use: 'two_ten'
     two_eight:
-        ansible_version: '2.8.17'
         vagrant_box: 'geerlingguy/centos8'
+        ansible_version: '2.8.20'
     two_nine:
-        ansible_version: '2.9.15'
         vagrant_box: 'geerlingguy/centos8'
+        ansible_version: '2.9.27'
     two_ten:
-        ansible_version: '2.10.3'
         vagrant_box: 'geerlingguy/centos8'
+        ansible_version: '2.10.7'
