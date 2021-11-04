@@ -5,17 +5,13 @@
     - name: Upgrade all packages
       yum: name=* state=latest
 
-    - name: pip upgrade pip
-      pip:
-        name:
-          - pip>20.2.0,<20.3.0
-
     - name: pip install components
       pip:
         name:
           - boto
           - boto3
           - awscli
+        executable: /usr/local/bin/pip3
 
     - name: Setup boto config file
       template: src=boto.j2
