@@ -16,12 +16,16 @@ The `playbook.yml` and `files/`, `group_vars/` & `templates/` directories in the
 
 `/provisioning/group_vars/all` should be created on your instance with your own AWS credentials supplied for the corresponding variables.
 
-`/provisioning/files/awsprivatekey.txt` should be edited on your instance with your own AWS EC2 key pair's private key (required for EC2 instance deployment)
+`/provisioning/files/awsprivatekey.txt` should be created on your instance with your own AWS EC2 key pair's private key (required for EC2 instance deployment)
+
+`/ansible/vault_pass.txt` should be created on your instance with the password to be used for Ansible Vault encoding/decoding.
 
 `config.yaml` should be edited to select the desired Ansible version in the `configs::use` value.  Current versions supported:
-* `two_eight`: Ansible 2.8.x on CentOS 8/Python 3.6 *(default)*
-* `two_nine`: Ansible 2.9.x on CentOS 8/Python 3.6
-* `two_ten`: Ansible 2.10.x on CentOS 8/Python 3.6
+* `2.8`: Ansible 2.8.x on Rocky Linux 8/Python 3.6
+* `2.9`: Ansible 2.9.x on Rocky Linux 8/Python 3.6
+* `2.10`: Ansible 2.10.x on Rocky Linux 8/Python 3.6
+* `3.x`: Ansible 3.x on Rocky Linux 8/Python 3.6 *(default)*
+* `4.x`: Ansible 3.x on Rocky Linux 8/Python 3.6 
 
 ## Activate
 
