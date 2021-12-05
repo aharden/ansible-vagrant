@@ -21,11 +21,12 @@ The `playbook.yml` and `files/`, `group_vars/` & `templates/` directories in the
 `/ansible/vault_pass.txt` should be created on your instance with the password to be used for Ansible Vault encoding/decoding.
 
 `config.yaml` should be edited to select the desired Ansible version in the `configs::use` value.  Current versions supported:
-* `2.8`: Ansible 2.8.x on Rocky Linux 8/Python 3.8
-* `2.9`: Ansible 2.9.x on Rocky Linux 8/Python 3.8
-* `2.10`: Ansible 2.10.x on Rocky Linux 8/Python 3.8
-* `3.x`: Ansible 3.x on Rocky Linux 8/Python 3.8 *(default)*
-* `4.x`: Ansible 3.x on Rocky Linux 8/Python 3.8 
+* `2.8`: Ansible 2.8.x on Rocky Linux 8/Python 3.9
+* `2.9`: Ansible 2.9.x on Rocky Linux 8/Python 3.9
+* `2.10`: Ansible 2.10.x on Rocky Linux 8/Python 3.9
+* `3.x`: Ansible 3.x on Rocky Linux 8/Python 3.9
+* `4.x`: Ansible 4.x on Rocky Linux 8/Python 3.9 *(default)*
+* `5.x`: Ansible 5.x on Rocky Linux 8/Python 3.9
 
 ## Activate
 
