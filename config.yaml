@@ -14,8 +14,8 @@ configs:
         ansible_version: '3.4.0'
         vagrant_box: 'generic/rocky8'
     4.x:
-        ansible_version: '4.9.0'
+        ansible_version: '4.10.0'
         vagrant_box: 'generic/rocky8'
     5.x:
-        ansible_version: '5.0.1'
+        ansible_version: '5.1.0'
         vagrant_box: 'generic/rocky8'
